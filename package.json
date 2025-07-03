@@ -1,0 +1,11 @@
+{
+  "name": "webdesignblueprint",
+  "version": "1.0.0",
+  "description": "Development server for WebDesignBlueprint project",
+  "scripts": {
+    "start": "live-server --port=5000 --open=index.html --watch=css,js,components,*.html"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

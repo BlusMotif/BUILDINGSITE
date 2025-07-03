@@ -1,0 +1,7 @@
+[build]
+  publish = "."
+  command = ""
+
+[dev]
+  port = 5000
+  publish = "."
