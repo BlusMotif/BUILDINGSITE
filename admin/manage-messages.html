@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Messages - BuildCorp Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Contact Messages</h1>
+                <button id="logout-btn" class="btn btn-light">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="manage-about.html">About Content</a>
+            <a href="manage-services.html">Services</a>
+            <a href="manage-projects.html">Projects</a>
+            <a href="manage-properties.html">Properties</a>
+            <a href="manage-messages.html" class="active">Messages</a>
+        </nav>
+
+        <div class="admin-card">
+            <h2>Contact Form Messages</h2>
+            <p>Messages submitted through the contact form are displayed below.</p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Subject</th>
+                        <th>Message Preview</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="messages-table-body">
+                    <!-- Messages will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal styles -->
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+    </style>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

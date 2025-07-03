@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Site Settings - BuildCorp Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1><i class="fas fa-cog"></i> Site Settings</h1>
+            <div class="admin-nav">
+                <a href="dashboard.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <button id="logout-btn" class="btn btn-danger">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+
+        <div class="admin-content">
+            <!-- Logo Management Section -->
+            <section class="admin-section">
+                <h2><i class="fas fa-image"></i> Logo Management</h2>
+                <div class="logo-manager">
+                    <div class="current-logo">
+                        <h3>Current Logo</h3>
+                        <div class="logo-preview">
+                            <img id="current-logo-img" src="" alt="Current Logo" style="display: none; max-width: 200px; max-height: 100px;">
+                            <div id="no-logo-message" class="no-content">No logo uploaded</div>
+                        </div>
+                    </div>
+                    
+                    <div class="logo-upload">
+                        <h3>Upload New Logo</h3>
+                        <div id="logo-upload-area" class="upload-area">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag and drop your logo here or <strong>click to browse</strong></p>
+                                <small>Supported formats: JPEG, PNG, GIF, WebP (Max: 10MB)</small>
+                            </div>
+                        </div>
+                        <input type="file" id="logo-input" accept="image/*" style="display: none;">
+                        <img id="logo-preview" style="display: none; max-width: 200px; margin-top: 10px;">
+                        
+                        <div class="logo-actions">
+                            <button id="save-logo-btn" class="btn btn-primary" style="display: none;">
+                                <i class="fas fa-save"></i> Save Logo
+                            </button>
+                            <button id="remove-logo-btn" class="btn btn-danger" style="display: none;">
+                                <i class="fas fa-trash"></i> Remove Logo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Information Section -->
+            <section class="admin-section">
+                <h2><i class="fas fa-address-book"></i> Contact Information</h2>
+                <form id="contact-info-form" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company-name">Company Name</label>
+                            <input type="text" id="company-name" name="companyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company-tagline">Company Tagline</label>
+                            <input type="text" id="company-tagline" name="companyTagline">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="business-hours">Business Hours</label>
+                            <input type="text" id="business-hours" name="businessHours" placeholder="Mon-Fri 9AM-6PM">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website URL</label>
+                            <input type="url" id="website" name="website" placeholder="https://buildcorp.com">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Contact Information
+                    </button>
+                </form>
+            </section>
+
+            <!-- Social Media Section -->
+            <section class="admin-section">
+                <h2><i class="fas fa-share-alt"></i> Social Media Links</h2>
+                <form id="social-media-form" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="facebook"><i class="fab fa-facebook"></i> Facebook</label>
+                            <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/buildcorp">
+                        </div>
+                        <div class="form-group">
+                            <label for="twitter"><i class="fab fa-twitter"></i> Twitter</label>
+                            <input type="url" id="twitter" name="twitter" placeholder="https://twitter.com/buildcorp">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="instagram"><i class="fab fa-instagram"></i> Instagram</label>
+                            <input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/buildcorp">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</label>
+                            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/company/buildcorp">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="youtube"><i class="fab fa-youtube"></i> YouTube</label>
+                            <input type="url" id="youtube" name="youtube" placeholder="https://youtube.com/buildcorp">
+                        </div>
+                        <div class="form-group">
+                            <label for="tiktok"><i class="fab fa-tiktok"></i> TikTok</label>
+                            <input type="url" id="tiktok" name="tiktok" placeholder="https://tiktok.com/@buildcorp">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Social Media Links
+                    </button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

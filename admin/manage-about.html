@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage About Content - BuildCorp Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Manage About Content</h1>
+                <button id="logout-btn" class="btn btn-light">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="manage-about.html" class="active">About Content</a>
+            <a href="manage-services.html">Services</a>
+            <a href="manage-projects.html">Projects</a>
+            <a href="manage-properties.html">Properties</a>
+            <a href="manage-messages.html">Messages</a>
+        </nav>
+
+        <div class="admin-card">
+            <h2>Edit About Us Content</h2>
+            <p>Use the rich text editor below to update the about us content. This content will appear on the about page and as a preview on the home page.</p>
+            
+            <div class="editor-container">
+                <div id="about-editor" class="editor-content">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2003, BuildCorp has grown from a small local construction company to a premier construction and real estate firm serving clients across the region. Our commitment to quality, innovation, and customer satisfaction has made us a trusted name in the industry.</p>
+                    
+                    <h3>Mission</h3>
+                    <p>To deliver exceptional construction and real estate services that exceed our clients' expectations while maintaining the highest standards of quality, safety, and environmental responsibility.</p>
+                    
+                    <h3>Vision</h3>
+                    <p>To be the leading construction and real estate company in our region, known for our innovative solutions, sustainable practices, and unwavering commitment to customer satisfaction.</p>
+                    
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li><strong>Quality:</strong> We never compromise on the quality of our work</li>
+                        <li><strong>Integrity:</strong> We conduct business with honesty and transparency</li>
+                        <li><strong>Innovation:</strong> We embrace new technologies and methods</li>
+                        <li><strong>Sustainability:</strong> We are committed to environmentally responsible practices</li>
+                        <li><strong>Customer Focus:</strong> Our clients' needs are at the center of everything we do</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-2">
+                <button id="save-about" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Content
+                </button>
+                <a href="../about.html" class="btn btn-outline" target="_blank">
+                    <i class="fas fa-eye"></i> Preview Page
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

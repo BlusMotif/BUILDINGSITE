@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Projects - BuildCorp Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Manage Projects</h1>
+                <button id="logout-btn" class="btn btn-light">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="manage-about.html">About Content</a>
+            <a href="manage-services.html">Services</a>
+            <a href="manage-projects.html" class="active">Projects</a>
+            <a href="manage-properties.html">Properties</a>
+            <a href="manage-messages.html">Messages</a>
+        </nav>
+
+        <div class="admin-card">
+            <h2>Add New Project</h2>
+            <form id="add-project-form">
+                <div class="form-group">
+                    <label for="project-title">Project Title *</label>
+                    <input type="text" id="project-title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-description">Description *</label>
+                    <textarea id="project-description" name="description" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-location">Location</label>
+                    <input type="text" id="project-location" name="location">
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-image">Project Image</label>
+                    <div class="image-upload" id="project-image-upload">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #e67e22; margin-bottom: 1rem;"></i>
+                        <p>Drag & drop an image here, or click to select</p>
+                        <input type="file" id="project-image" name="image" accept="image/*" style="display: none;">
+                    </div>
+                    <img id="image-preview" class="image-preview" style="display: none;" alt="Preview">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Add Project</button>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Existing Projects</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="projects-table-body">
+                    <!-- Projects will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

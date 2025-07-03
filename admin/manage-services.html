@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Services - BuildCorp Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Manage Services</h1>
+                <button id="logout-btn" class="btn btn-light">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="manage-about.html">About Content</a>
+            <a href="manage-services.html" class="active">Services</a>
+            <a href="manage-projects.html">Projects</a>
+            <a href="manage-properties.html">Properties</a>
+            <a href="manage-messages.html">Messages</a>
+        </nav>
+
+        <div class="admin-card">
+            <h2>Add New Service</h2>
+            <form id="add-service-form">
+                <div class="form-group">
+                    <label for="service-title">Service Title *</label>
+                    <input type="text" id="service-title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service-description">Description *</label>
+                    <textarea id="service-description" name="description" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service-icon">Font Awesome Icon Class</label>
+                    <input type="text" id="service-icon" name="icon" placeholder="e.g., fas fa-home">
+                    <small>Visit <a href="https://fontawesome.com/icons" target="_blank">Font Awesome</a> for icon classes</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Add Service</button>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Existing Services</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Icon</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="services-table-body">
+                    <!-- Services will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

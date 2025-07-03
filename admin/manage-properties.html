@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Properties - BuildCorp Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Manage Properties</h1>
+                <button id="logout-btn" class="btn btn-light">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="manage-about.html">About Content</a>
+            <a href="manage-services.html">Services</a>
+            <a href="manage-projects.html">Projects</a>
+            <a href="manage-properties.html" class="active">Properties</a>
+            <a href="manage-messages.html">Messages</a>
+        </nav>
+
+        <div class="admin-card">
+            <h2>Add New Property</h2>
+            <form id="add-property-form">
+                <div class="form-group">
+                    <label for="property-title">Property Title *</label>
+                    <input type="text" id="property-title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="property-description">Description *</label>
+                    <textarea id="property-description" name="description" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="property-location">Location *</label>
+                    <input type="text" id="property-location" name="location" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="property-price">Price ($) *</label>
+                    <input type="number" id="property-price" name="price" required min="0">
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="property-bedrooms">Bedrooms</label>
+                        <input type="number" id="property-bedrooms" name="bedrooms" min="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="property-bathrooms">Bathrooms</label>
+                        <input type="number" id="property-bathrooms" name="bathrooms" min="0" step="0.5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="property-area">Area (sq ft)</label>
+                        <input type="number" id="property-area" name="area" min="0">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="property-image">Property Image</label>
+                    <div class="image-upload" id="property-image-upload">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #e67e22; margin-bottom: 1rem;"></i>
+                        <p>Drag & drop an image here, or click to select</p>
+                        <input type="file" id="property-image" name="image" accept="image/*" style="display: none;">
+                    </div>
+                    <img id="property-image-preview" class="image-preview" style="display: none;" alt="Preview">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Add Property</button>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Existing Properties</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Location</th>
+                        <th>Price</th>
+                        <th>Bedrooms</th>
+                        <th>Bathrooms</th>
+                        <th>Area</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="properties-table-body">
+                    <!-- Properties will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
